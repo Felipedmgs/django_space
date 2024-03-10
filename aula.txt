@@ -61,3 +61,7 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
  git init
 
  #git add ara incluir os arquivos
+ git init
+ git add .
+ git commit -m 'projeto alura space'
+ 
