@@ -64,4 +64,38 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
  git init
  git add .
  git commit -m 'projeto alura space'
- 
+
+
+ 8 - lista comandos do manage.py
+    python manage.py help
+
+9 - Iniciando projeto app:
+    python manage.py startapp galeria
+
+    Após criação do app 
+
+10 - dentro da pasta do app, temos o arquivo view.py, onde iremos incluir o codigo que vai mostrar o html na tela
+
+11 - para quando rodar chamar esse arquivo precisamos incluir o codigo no arquivo:urls.py
+from galeria.views import index
+urlpatterns = [ 
+    path('',index),
+]
+
+12 - templates:
+Para ser possivel definir uma pasta de templates
+em settings.py 
+"TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        (colocar a pasta que foi criada na raiz do projeto para ser acessada pelo django)
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+"
+Dentro do arquivo views.py
+  (indicar o arquivo que sera inicializado como templates)
+  return render(request, 'index.html')
+
+Lembrando que antes disso deve ser feito a rotas:
+
+13 - incluindo arquivos statics
+python manage.py collectstatic
